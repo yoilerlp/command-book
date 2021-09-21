@@ -28,8 +28,22 @@ namespace Comandos
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+
+
+            const string herokuConnectionString = @"
+                            Host=ec2-52-203-74-38.compute-1.amazonaws.com;
+                            Port=5432;
+                            Username=ktmlhomnyvkjcx;
+                            Password=b4123ddb9fe4ad445e5150c989e83df1d8a79a8f32eee2b16737c00488292674;
+                            Database=d1rhq2nuj2ldn0;
+                            Pooling=true;
+                            SSL Mode=Require;
+                            TrustServerCertificate=True;
+                        ";
+
+                        
             services.AddDbContext<CommanderContext>(opt => {
-                opt.UseNpgsql(Configuration.GetConnectionString("CommanderConnexion"));
+                opt.UseNpgsql(herokuConnectionString);
             });
 
             services.AddScoped<ICommanderRepo, SqlCommanderRepo>();
