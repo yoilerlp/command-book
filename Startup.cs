@@ -31,14 +31,7 @@ namespace Comandos
 
 
             const string herokuConnectionString = @"
-                            Host=ec2-52-203-74-38.compute-1.amazonaws.com;
-                            Port=5432;
-                            Username=ktmlhomnyvkjcx;
-                            Password=b4123ddb9fe4ad445e5150c989e83df1d8a79a8f32eee2b16737c00488292674;
-                            Database=d1rhq2nuj2ldn0;
-                            Pooling=true;
-                            SSL Mode=Require;
-                            TrustServerCertificate=True;
+                           
                         ";
 
                         
